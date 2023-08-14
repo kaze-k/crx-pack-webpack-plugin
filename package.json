@@ -4,8 +4,7 @@
   "description": "A webpack5 plugin to pack crx",
   "main": "dist/index.js",
   "files": [
-    "dist/",
-    "readme.md"
+    "dist/"
   ],
   "scripts": {
     "compile": "tsc",
