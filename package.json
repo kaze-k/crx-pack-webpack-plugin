@@ -1,0 +1,50 @@
+{
+  "name": "crx-pack-webpack-plugin",
+  "version": "1.0.0",
+  "description": "A webpack5 plugin to pack crx",
+  "main": "dist/index.js",
+  "files": [
+    "dist/",
+    "readme.md"
+  ],
+  "scripts": {
+    "compile": "tsc",
+    "eslint:check": "eslint src",
+    "eslint:fix": "eslint --fix src",
+    "prettier:check": "prettier --check src",
+    "prettier:format": "prettier --write src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaze-k/crx-pack-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "crx3",
+    "node"
+  ],
+  "author": "kaze-k <kerkaze@outlook.com> (https://github.com/kaze-k)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaze-k/crx-pack-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/kaze-k/crx-pack-webpack-plugin",
+  "peerDependencies": {
+    "webpack": ">=5.0.0"
+  },
+  "dependencies": {
+    "crx3": "^1.1.3",
+    "mkdirp": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "@types/webpack": "^5.28.1",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.1",
+    "typescript": "^5.1.6"
+  }
+}
