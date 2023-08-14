@@ -144,7 +144,7 @@ class Plugin {
   }
 
   private pack(): void {
-    const settings = {
+    const settings: Settings = {
       keyPath: this.keyFile,
       crxPath: this.crxFile,
     }
