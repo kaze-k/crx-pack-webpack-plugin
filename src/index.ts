@@ -95,15 +95,15 @@ class Plugin {
   public apply(compiler: Compiler): void {
     this.logger = compiler.getInfrastructureLogger("crx-webpack-plugin")
 
-    compiler.hooks.make.tap("crx-webpack-plguin", () => {
+    compiler.hooks.make.tap("crx-webpack-plguin", (): void => {
       this.clean(this.outputPath)
     })
 
-    compiler.hooks.emit.tap("crx-webpack-plugin", () => {
+    compiler.hooks.emit.tap("crx-webpack-plugin", (): void => {
       this.init()
     })
 
-    compiler.hooks.done.tap("crx-webpack-plugin", () => {
+    compiler.hooks.done.tap("crx-webpack-plugin", (): void => {
       this.pack()
     })
   }
