@@ -11,3 +11,9 @@ declare module "crx3" {
   ) => Promise<void>
   export default crx3
 }
+
+declare module "colors-console" {
+  const colors_console: (color: string, message: string) => void
+
+  export default colors_console
+}

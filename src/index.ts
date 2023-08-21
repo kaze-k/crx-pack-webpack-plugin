@@ -3,6 +3,7 @@ import { join } from "path"
 import { mkdirp } from "mkdirp"
 import crx from "crx3"
 import { Compiler, Compilation } from "webpack"
+import colors from "colors-console"
 
 const MANIFEST = "manifest.json"
 const NAME = "package"
@@ -151,7 +152,21 @@ class Plugin {
 
     this.handleSettings(settings)
 
-    crx([this.manifest], settings).catch((err: Error): void => this.logger.error(err))
+    crx([this.manifest], settings)
+      .then((): void => {
+        if (settings.crxPath) {
+          console.log(`${colors("cyan", this.contentPath)} -> ${colors("green", settings.crxPath)}`)
+        }
+
+        if (settings.zipPath) {
+          console.log(`${colors("cyan", this.contentPath)} -> ${colors("green", settings.zipPath)}`)
+        }
+
+        if (settings.xmlPath) {
+          console.log(`${colors("cyan", this.contentPath)} -> ${colors("green", settings.xmlPath)}`)
+        }
+      })
+      .catch((err: Error): void => this.logger.error(err))
   }
 }
 
