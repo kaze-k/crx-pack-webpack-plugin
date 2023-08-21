@@ -1,6 +1,6 @@
 {
   "name": "crx-pack-webpack-plugin",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A webpack5 plugin to pack crx",
   "main": "dist/index.js",
   "files": [
