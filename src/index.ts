@@ -19,6 +19,7 @@ interface Options {
   updateURL?: string
   updateFilename?: string
   name?: string
+  autoClean?: boolean
 }
 
 interface Settings {
@@ -44,6 +45,7 @@ class Plugin {
   public zipFile: string
   public updateFile: string
   public updateURL: string
+  public autoClean: boolean
   public logger: ReturnType<Compilation["getLogger"]>
 
   constructor(options: Options) {
@@ -75,6 +77,7 @@ class Plugin {
 
     this.zip = !!this.options.zip
     this.xml = !!this.options.xml
+    this.autoClean = !!this.options.autoClean
 
     this.options.updateURL = this.options.updateURL.replace(/\/$/, "")
 
@@ -97,7 +100,9 @@ class Plugin {
     this.logger = compiler.getInfrastructureLogger("crx-webpack-plugin")
 
     compiler.hooks.make.tap("crx-webpack-plguin", (): void => {
-      this.clean(this.outputPath)
+      if (this.autoClean) {
+        this.clean(this.outputPath)
+      }
     })
 
     compiler.hooks.emit.tap("crx-webpack-plugin", (): void => {
