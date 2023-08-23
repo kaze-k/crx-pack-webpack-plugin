@@ -22,6 +22,7 @@ new CrxPackWebpackPlugin({
   updateURL: "http://localhost:8080",
   updateFilename: "update.xml",
   name: "example-name",
+  autoClean: true,
 })
 ```
 
@@ -37,6 +38,7 @@ new CrxPackWebpackPlugin({
 | updateURL | no | string | "http://localhost:8000/" | where to find updates.xml |
 | updateFilename | no | string | "update.xml" | filename for update.xml |
 | name | no | string | "package" | the name of the built extension. |
+| autoClean | no | boolean | false | whether to automatically empty files |
 
 ## Alternatives
 
